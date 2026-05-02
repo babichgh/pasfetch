@@ -1,7 +1,7 @@
 program pasfetch;
 
 uses
-	Classes;
+	Classes, strutils;
 
 procedure PrintOSInfo;
 var
@@ -24,6 +24,18 @@ begin
         writeln('OS: ', OSName, ' ', OSVersion)
 end;
 
+procedure PrintKernelInfo;
+var
+	Config: TStringList;
 begin
-	PrintOSInfo
+	Config := TStringList.Create;
+	Config.LoadFromFile('/proc/version');
+
+	writeln('Kernel: ', SplitString(Config[0], ' ')[2]);
+	Config.Free;
+end;
+
+begin
+	PrintOSInfo;
+	PrintKernelInfo;
 end.
