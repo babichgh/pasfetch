@@ -26,9 +26,12 @@ jobs:
         run: make
 
       - name: Package with nfpm
-        uses: goreleaser/nfpm-action@v2.46.3
-        with:
-          args: package --config nfpm.yaml --target .
+        run: |
+          echo "Installing nfpm..."
+          curl -sfL https://github.com/goreleaser/nfpm/releases/download/v2.46.3/nfpm_2.46.3_Linux_x86_64.tar.gz | tar -xz nfpm
+          sudo mv nfpm /usr/local/bin/
+
+          nfpm package --config nfpm.yaml --target .
         env:
           VERSION: ${{ github.ref_name }}
 
