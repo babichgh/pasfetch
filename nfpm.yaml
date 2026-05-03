@@ -1,0 +1,13 @@
+name: "pasfetch"
+arch: "amd64"
+platform: "linux"
+version: "${VERSION}"
+section: "utils"
+priority: "optional"
+maintainer: "John Babich <babichmail1@gmail.com>"
+description: "Brief description of your app"
+license: "MIT"
+
+contents:
+  - src: "./build/pasfetch"
+    dst: "/usr/bin/pasfetch"
