@@ -26,7 +26,7 @@ jobs:
         run: make
 
       - name: Package with nfpm
-        uses: goreleaser/nfpm-action@v2
+        uses: goreleaser/nfpm-action@v2.46.3
         with:
           args: package --config nfpm.yaml --target .
         env:
