@@ -5,7 +5,7 @@ version: "${VERSION}"
 section: "utils"
 priority: "optional"
 maintainer: "John Babich <babichmail1@gmail.com>"
-description: "Brief description of your app"
+description: "pasfetch is a neofetch/fastfetch-like fetch created on Pascal (FreePascal)"
 license: "MIT"
 
 contents:
